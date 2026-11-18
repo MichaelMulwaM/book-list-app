@@ -21,3 +21,20 @@ function App() {
   const handleDeleteBook = (id) => {
     setBooks(books.filter((book) => book.id !== id));
   };
+
+  return (
+    <div className="app-container">
+      <header>
+        <h1>My Reading List</h1>
+        <p>Total Books: {books.length}</p>
+      </header>
+
+      <main>
+        <AddBookForm onAdd={handleAddBook} />
+        <BookList books={books} onDelete={handleDeleteBook} />
+      </main>
+    </div>
+  );
+}
+
+export default App;
