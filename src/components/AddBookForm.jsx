@@ -56,3 +56,5 @@ function AddBookForm({ onAdd }) {
     </form>
   );
 }
+
+export default AddBookForm;
