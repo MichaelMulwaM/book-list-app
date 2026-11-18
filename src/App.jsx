@@ -10,3 +10,14 @@ const INITIAL_BOOKS = [
   { id: 4, title: 'The Alchemist', author: 'Paulo Coelho', genre: 'Adventure', year: 1988 },
   { id: 5, title: '1984', author: 'George Orwell', genre: 'Dystopian', year: 1949 },
 ];
+
+function App() {
+  const [books, setBooks] = useState(INITIAL_BOOKS);
+
+  const handleAddBook = (newBook) => {
+    setBooks([newBook, ...books]);
+  };
+
+  const handleDeleteBook = (id) => {
+    setBooks(books.filter((book) => book.id !== id));
+  };
