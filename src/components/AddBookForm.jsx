@@ -17,3 +17,42 @@ function AddBookForm({ onAdd }) {
       genre: genre || 'General',
       year: year || 'N/A',
     });
+
+    setTitle('');
+    setAuthor('');
+    setGenre('');
+    setYear('');
+  };
+
+  return (
+    <form className="add-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Book Title *"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Author *"
+        value={author}
+        onChange={(e) => setAuthor(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Genre (e.g., Sci-Fi)"
+        value={genre}
+        onChange={(e) => setGenre(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Year"
+        value={year}
+        onChange={(e) => setYear(e.target.value)}
+      />
+      <button type="submit" className="add-btn">Add Book</button>
+    </form>
+  );
+}
